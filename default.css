@@ -96,19 +96,19 @@ a.h1-link:active {
 /* NORMAL LINKS */
 
 a:link {
-	color: #203500;
+	color: #96ac60;
  	text-decoration: none;
 }
 a:visited {
-	color:#203500;
+	color:#96ac60;
     text-decoration: none;
 }
 a:hover {
-	color:#203500;
+	color:#96ac60;
     text-decoration: underline;
 }
 a:active {
-	color:#203500;
+	color:#96ac60;
     text-decoration: none;
 }
 
