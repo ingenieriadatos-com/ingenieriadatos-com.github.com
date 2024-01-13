@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: newsletter.ingenieriadatos.com/sitemap.xml
