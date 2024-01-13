@@ -17,6 +17,25 @@
     <h1>Política de privacidad</h1>
     <hr/>
 
+    <nav>
+        <!-- Botón de toggle para dispositivos móviles -->
+        <button id="toggle-btn">&equiv;</button>
+
+        <ul>
+            <li><a href="https://newsletter.ingenieriadatos.com">Inicio</a></li>
+            <p>&bull;</p>
+            <li><a href="https://newsletter.ingenieriadatos.com/archivo.html">Archivo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Función para mostrar/ocultar la navbar en dispositivos móviles
+        document.getElementById('toggle-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
     <p>
     Aviso de Privacidad para Suscriptores de la Newsletter de Ingeniería de Datos
     </p>
