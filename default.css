@@ -16,6 +16,7 @@ code {
 
 h1,h2,h3,h4 {
 	text-align: left;
+	color:#203500;
 }
 
 li, ul, p {
@@ -43,6 +44,8 @@ form {
 	border-radius: 10px;
 	padding: 20px;
 	margin-top: 10px;
+	background-color: #203500;
+	color: white;
 }
 
 input {
@@ -66,7 +69,7 @@ button {
 
 button:hover {
 	color: white;
-	background-color: black;
+	background-color: #000000;
 	border-style: solid;
 	border-color: black;
 }
@@ -93,19 +96,19 @@ a.h1-link:active {
 /* NORMAL LINKS */
 
 a:link {
-	color: grey;
+	color: #203500;
  	text-decoration: none;
 }
 a:visited {
-	color:grey;
+	color:#203500;
     text-decoration: none;
 }
 a:hover {
-	color:grey;
+	color:#203500;
     text-decoration: underline;
 }
 a:active {
-	color:grey;
+	color:#203500;
     text-decoration: none;
 }
 
