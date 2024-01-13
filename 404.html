@@ -1,0 +1,52 @@
+---
+permalink: /404.html
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" >
+    <link type="text/css" href="/default.css" rel="stylesheet">
+    <link type="text/css" href="/navbar.css" rel="stylesheet">
+    <script data-goatcounter="https://ingenieriadatos.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <meta name="description"
+      content="Newsletter de Ingeniería de Datos">
+    <title>Newsletter Ingeniería Datos</title>
+</head>
+
+<body>
+    <h1>Newsletter de Ingeniería de Datos</h1>
+    <hr/>
+    <nav>
+        <!-- Botón de toggle para dispositivos móviles -->
+        <button id="toggle-btn">&equiv;</button>
+
+        <ul>
+            <li><a href="https://newsletter.ingenieriadatos.com">Inicio</a></li>
+            <p>&bull;</p>
+            <li><a href="https://newsletter.ingenieriadatos.com/archivo.html">Archivo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Función para mostrar/ocultar la navbar en dispositivos móviles
+        document.getElementById('toggle-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
+    <p>No sé qué página has buscado, pero no existe :(</p>
+    
+    <br/>
+    <footer>
+        &copy; <span id="anyo"></span> ingenieriadatos.com - Todos los derechos reservados.
+        <script>
+            document.getElementById("anyo").innerHTML = new Date().getFullYear();
+        </script>
+    </footer>
+    </body>
+</html>

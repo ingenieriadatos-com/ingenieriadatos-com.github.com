@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" >
+    <link type="text/css" href="/default.css" rel="stylesheet">
+    <link type="text/css" href="/navbar.css" rel="stylesheet">
+    <script data-goatcounter="https://ingenieriadatos.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <meta name="description"
+      content="Archivo de la newsletter de ingeniería de datos de Emilio Barragán Rodríguez.">
+    <title>Newsletter de Ingeniería de Datos | Archivo</title>
+</head>
+
+<body>
+    <h1>Archivo</h1>
+    <hr/>
+
+    <nav>
+        <!-- Botón de toggle para dispositivos móviles -->
+        <button id="toggle-btn">&equiv;</button>
+
+        <ul>
+            <li><a href="https://newsletter.ingenieriadatos.com">Inicio</a></li>
+            <p>&bull;</p>
+            <li><a href="https://newsletter.ingenieriadatos.com/archivo.html">Archivo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Función para mostrar/ocultar la navbar en dispositivos móviles
+        document.getElementById('toggle-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
+    <ul>
+        <li>
+            <a class="list-link" href="#">
+                Todavía no hay posts en la newsletter.
+            </a>
+        </li>
+    </ul>
+
+    <br/>
+    <footer>
+        &copy;<span id="anyo"></span> ingenieriadatos.com - Todos los derechos reservados.
+        <script>
+            document.getElementById("anyo").innerHTML = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>
