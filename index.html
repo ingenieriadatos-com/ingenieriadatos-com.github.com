@@ -50,13 +50,41 @@
             <li>Consejos de carrera laboral</li>
             <li>Y muchas cosas más...</li>
         </ul>
-        <form action="https://europe-west3-emibarrod-newsletter.cloudfunctions.net/suscribe-newsletter" method="GET">
+        <form action="https://europe-west3-emibarrod-newsletter.cloudfunctions.net/suscribe-newsletter" method="GET" onsubmit="return validarFormulario()">
             <input placeholder="Nombre (sin apellidos)" type="text" id="nombre" name="nombre" />
             </br>
             <input placeholder="email" type="email" id="email" name="email" />
             </br>
-            <button type="submit">SUSCRIBIRME</button>
+            <input type="checkbox" id="data" name="data" onchange="habilitarBoton()"/>
+            <label for="data">Acepto la <a href="https://newsletter.ingenieriadatos.com/politica-privacidad.html">política de privacidad.</a></label><br>
+            </br>
+            <button type="submit" id="suscribirme" disabled="true">SUSCRIBIRME</button>
         </form>
+
+        <script>
+            function habilitarBoton() {
+                var checkbox = document.getElementById("data");
+                var suscribirme = document.getElementById("suscribirme");
+    
+                // Habilitar o deshabilitar el botón según el estado del checkbox
+                suscribirme.disabled = !checkbox.checked;
+            }
+
+            function validarFormulario() {
+                var nombre = document.getElementById("nombre").value;
+                var email = document.getElementById("email").value;
+                var checkbox = document.getElementById("data");
+
+                // Verificar que los campos no estén vacíos y que el checkbox esté marcado
+                if (nombre.trim() === "" || email.trim() === "" || !checkbox.checked) {
+                    alert("Por favor, completa todos los campos.");
+                    return false; // Evita el envío del formulario
+                }
+
+                return true; // Permite el envío del formulario
+            }
+        </script>
+
     </div>
     <p>
         (Si te suscribes, aceptas que guarde tu nombre y correo SOLO y EXCLUSIVAMENTE
