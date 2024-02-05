@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" >
+    <link type="text/css" href="/default.css" rel="stylesheet">
+    <link type="text/css" href="/navbar.css" rel="stylesheet">
+    <link rel="canonical" href="https://newsletter.ingenieriadatos.com">
+    <script data-goatcounter="https://ingenieriadatos.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <meta name="description"
+      content="¿Deberías construir una ETL custom o usar una herramienta ETL?.">
+    <meta name="keywords"
+      content="ingeniería de datos, newsletter de ingeniería de datos, newsletter, emibarrod,
+                ingenieria de datos, newsletter de ingenieria de datos, data engineering newsletter,
+                ingenieria, ingeniería, datos, data, engineering, newsletter ingenieria de datos,
+                newsletter ingenieria datos, Emilio Barragán, Emilio,
+                fases proyecto ingenieria datos, fases proyecto, proyecto ingenieria datos,
+                proyecto de ingenieria de datos, proyecto de ingeniería de datos">
+    <title>¿Deberías construir una ETL custom o usar una herramienta ETL?</title>
+</head>
+
+<body>
+    <h1>¿Deberías construir una ETL custom o usar una herramienta ETL?</h1>
+    <hr/>
+
+    <nav>
+        <!-- Botón de toggle para dispositivos móviles -->
+        <button id="toggle-btn">&equiv;</button>
+
+        <ul>
+            <li><a href="https://newsletter.ingenieriadatos.com">Inicio</a></li>
+            <p>&bull;</p>
+            <li><a href="https://newsletter.ingenieriadatos.com/archivo.html">Archivo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Función para mostrar/ocultar la navbar en dispositivos móviles
+        document.getElementById('toggle-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
+<p>Cuando nos enfrentamos a un proyecto de ingeniería de datos, elegir entre una ETL customizada o utilizar una herramienta ETL preexistente es una decisión muy importante que tendrá un efecto directo sobre el éxito del proyecto. Ambas opciones tienen sus propias ventajas y desventajas, y qué elegir dependerá tanto del equipo como de las características del proyecto que tienes entre manos.</p>
+<p>Antes de seguir, si no sabes muy bien qué es un proceso ETL, échale un ojo a <a href="https://www.linkedin.com/posts/emibarrod_qu%C3%A9-es-una-etl-activity-7127560568722325505-xvjo">este post</a>.</p>
+<h2>Herramienta ETL</h2>
+<p>Una herramienta ETL es un software diseñado para facilitar la creación y la gestión de procesos ETL. Estas herramientas suelen ofrecer interfaces gráficas que permiten diseñar y ejecutar flujos de trabajo sin necesidad de programación intensiva.</p>
+<p>Se supone que estas herramientas te ahorran tiempo y esfuerzo. No siempre es así. He usado algunas herramientas ETL que eran un completo dolor de cabeza a la hora de configurarlas. No es oro todo lo que reluce.</p>
+<h4>Ventajas</h4>
+<ul>
+<li>
+<p><strong>Rapidez en la implementación</strong>: Las herramientas ETL están diseñadas para acelerar el desarrollo, permitiendo la construcción de flujos de trabajo mediante interfaces visuales, reduciendo el tiempo de implementación.</p>
+</li>
+<li>
+<p><strong>Facilidad de mantenimiento</strong>: La mayoría de las herramientas ETL proporcionan funciones de monitoreo y gestión que simplifican el mantenimiento de los procesos, facilitando la identificación y solución de problemas.</p>
+</li>
+<li>
+<p><strong>Escalabilidad</strong>: Estas herramientas suelen ser escalables, permitiendo adaptarse a volúmenes de datos en constante crecimiento sin una reescritura significativa del código.</p>
+</li>
+</ul>
+<h4>Desventajas</h4>
+<ul>
+<li>
+<p><strong>Limitaciones en la personalización</strong>: Aunque son versátiles, las herramientas ETL pueden tener limitaciones en términos de personalización para casos muy específicos, lo que puede afectar la adaptabilidad a ciertos requerimientos.</p>
+</li>
+<li>
+<p><strong>Costes asociados</strong>: Algunas herramientas ETL pueden tener costes asociados, ya sea en términos de licencias, suscripciones mensuales o hardware requerido, lo que puede ser una consideración importante en proyectos con presupuestos ajustados.</p>
+</li>
+</ul>
+<p><a href="https://www.datacamp.com/es/blog/a-list-of-the-16-best-etl-tools-and-why-to-choose-them">Aquí</a> tienes una lista de herramientas ETLs que puedes usar.</p>
+<h2>ETL custom</h2>
+<p>Un proceso de ETL custom implica desarrollar una solución a medida desde cero, abordando cada fase del proceso, desde la extracción hasta la carga de datos en la base de datos destino.</p>
+<p>Sinceramente, es mi elección favorita. Puede ser que sea debido a mi background de ingeniero informático. Tener control sobre cada parte de la ETL me parece algo muy potente. Pero como dijo el tío Ben: <em>"Un gran poder conlleva una gran responsabilidad"</em>. Por lo que deberás tener una gran capacidad técnica para desarrollar tus ETLs desde cero.</p>
+<h4>Ventajas</h4>
+<ul>
+<li>
+<p><strong>Flexibilidad total</strong>: La personalización total permite adaptar el proceso a requisitos específicos y cambios en el entorno, lo que puede ser fundamental en proyectos altamente especializados.</p>
+</li>
+<li>
+<p><strong>Optimización de rendimiento</strong>: Al construir cada componente a medida, se puede optimizar el rendimiento para satisfacer necesidades específicas, logrando eficiencia en el manejo de grandes volúmenes de datos.</p>
+</li>
+<li>
+<p><strong>Menos dependencia de terceros</strong>: La dependencia de terceros es mínima, ya que el control total recae en el equipo de desarrollo interno.</p>
+</li>
+</ul>
+<h4>Desventajas</h4>
+<ul>
+<li>
+<p><strong>Mayor tiempo de desarrollo</strong>: La creación de un proceso ETL custom suele requerir más tiempo y recursos, ya que cada componente debe ser desarrollado y probado individualmente.</p>
+</li>
+<li>
+<p><strong>Mayor complejidad de mantenimiento</strong>: La gestión y mantenimiento del código personalizado puede ser más compleja, especialmente a medida que el sistema evoluciona y se expande.</p>
+</li>
+</ul>
+<h2>¿Cuándo usar cada una?</h2>
+<p>La elección entre una herramienta ETL y el desarrollo desde cero dependerá de diversos factores como la complejidad del proyecto, los requisitos del mismo, el presupuesto disponible y la experiencia de tu equipo. </p>
+<p><strong>Utiliza una herramienta ETL cuando</strong>:</p>
+<ul>
+<li>El proyecto tiene plazos ajustados y se requiere una implementación rápida.</li>
+<li>No se requiere nada muy personalizado.</li>
+<li>Tu empresa ya use una herramienta ETL para otros proyectos.</li>
+<li>El presupuesto permite los costes asociados con las herramientas ETL.</li>
+</ul>
+<p><strong>Opta por una ETL custom cuando</strong>:</p>
+<ul>
+<li>La ETL no es típica y requiere de mucha personalización.</li>
+<li>El rendimiento y la eficiencia deben ser optimizados para casos específicos.</li>
+<li>Existe un equipo de desarrollo experimentado capaz de gestionar y mantener un sistema personalizado a lo largo del tiempo.</li>
+</ul>
+<p>Aún así, mi consejo es: <strong>USA LO QUE TU EQUIPO CONOZCA</strong>.</p>
+<p>¿Tu equipo sabe Python? Crea ETLs custom con Python y alguna librería. ¿Tu equipo sabe AWS Glue? Usa AWS Glue. No te compliques la vida y usa siempre lo que controléis mejor.</p>
+<p>Y tú, ¿qué prefieres? tengo curiosidad por saber si soy el único fan de las ETLs desde cero.</p>
+    
+<br/>
+
+<footer>
+    &copy; <span id="anyo"></span> Emilio Barragán Rodríguez. Todos los derechos reservados.
+    <script>
+        document.getElementById("anyo").innerHTML = new Date().getFullYear();
+    </script>
+</footer>
+</body>
+</html>
