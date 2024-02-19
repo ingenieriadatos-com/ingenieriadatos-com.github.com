@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" >
+    <link type="text/css" href="/default.css" rel="stylesheet">
+    <link type="text/css" href="/navbar.css" rel="stylesheet">
+    <link rel="canonical" href="https://newsletter.ingenieriadatos.com">
+    <script data-goatcounter="https://ingenieriadatos.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <meta name="description"
+      content="Índices en bases de datos SQL<">
+    <meta name="keywords"
+      content="ingeniería de datos, newsletter de ingeniería de datos, newsletter, emibarrod,
+                ingenieria de datos, newsletter de ingenieria de datos, data engineering newsletter,
+                ingenieria, ingeniería, datos, data, engineering, newsletter ingenieria de datos,
+                newsletter ingenieria datos, Emilio Barragán, Emilio,
+                fases proyecto ingenieria datos, fases proyecto, proyecto ingenieria datos,
+                proyecto de ingenieria de datos, proyecto de ingeniería de datos">
+    <title>Índices en bases de datos SQL</title>
+</head>
+
+<body>
+    <h1>Índices en bases de datos SQL</h1>
+    <hr/>
+
+    <nav>
+        <!-- Botón de toggle para dispositivos móviles -->
+        <button id="toggle-btn">&equiv;</button>
+
+        <ul>
+            <li><a href="https://newsletter.ingenieriadatos.com">Inicio</a></li>
+            <p>&bull;</p>
+            <li><a href="https://newsletter.ingenieriadatos.com/archivo.html">Archivo</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Función para mostrar/ocultar la navbar en dispositivos móviles
+        document.getElementById('toggle-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
+<p>¿Qué pasa cuando tienes tantos datos en unas tablas, que no puedes consultar ni unir datos porque tarda mucho? Probablemente tengas que usar los índices de SQL.</p>
+<h2>¿Qué son los índices?</h2>
+<p>Un índice en una base de datos SQL es una estructura de datos que mejora la velocidad de las operaciones de consulta de datos en una tabla.</p>
+<p>Los índices son creados en columnas específicas de una tabla para facilitar el acceso rápido a los datos, funcionando de manera similar a un índice al principio de un libro que permite localizar rápidamente el capítulo que nos interesa.</p>
+<h2>Propósito de los índices</h2>
+<p>El objetivo principal de un índice es aumentar la eficiencia de las consultas que filtran o consultan datos por una o más columnas.</p>
+<p>Sin índices, el motor de la base de datos debe realizar una búsqueda completa de la tabla para encontrar los registros que coincidan con los criterios de búsqueda, lo cual puede ser ineficiente para tablas grandes.</p>
+<p>Los índices permiten una búsqueda mucho más rápida, reduciendo significativamente el tiempo necesario para encontrar los datos solicitados.</p>
+<h2>Ventajas de los índices</h2>
+<ol>
+<li><strong>Mejora del rendimiento de consultas:</strong> La ventaja más notable de los índices es la reducción drástica en el tiempo de consulta, especialmente en bases de datos grandes.</li>
+<li><strong>Eficiencia en la ordenación de datos:</strong> Los índices pueden mejorar el rendimiento de las operaciones de ordenación (SORT) al preordenar los datos según las columnas indexadas.</li>
+<li><strong>Optimización de las operaciones de agregación:</strong> Las consultas que incluyen operaciones de agregación (como SUM, AVG) se benefician de los índices, ya que facilitan el acceso rápido a los datos necesarios.</li>
+</ol>
+<h2>Desventajas de los índices</h2>
+<ol>
+<li><strong>Mayor tamaño de la base de datos:</strong> Cada índice que se crea consume espacio adicional en disco. Esto se debe a que, para crear los índices, se crean estructuras de datos adicionales.</li>
+<li><strong>Operaciones de escritura más lentas:</strong> Las inserciones, actualizaciones y eliminaciones pueden volverse más lentas debido a que el sistema debe actualizar los índices además de los datos.</li>
+<li><strong>Mantenimiento de índices:</strong> Los índices requieren mantenimiento, como reconstrucciones y reorganizaciones, para mantener su eficiencia, especialmente en bases de datos que se actualizan con mucha frecuencia.</li>
+</ol>
+<h2>Cómo crear un índice en SQL</h2>
+<p>La creación de un índice en SQL se realiza usando el comando <code>CREATE INDEX</code>, seguido del nombre del índice y la tabla y columna sobre la cual se creará.</p>
+<p>Código ejemplo:</p>
+<pre><code class="language-sql">CREATE INDEX idx_columna ON tabla(columna);
+</code></pre>
+<p>Es esencial elegir cuidadosamente las columnas a indexar, considerando las consultas más frecuentes y críticas para el rendimiento. Un buen diseño de índices puede significar la diferencia entre una aplicación ágil y una lenta.</p>
+<p>Por ejemplo, si quiero unir dos tablas grandes, las columnas que indexaré serán las que se usen para el cruce.</p>
+<h2>Mejores prácticas</h2>
+<ul>
+<li><strong>No sobrecargar con índices:</strong> Aunque los índices pueden mejorar el rendimiento de las consultas, tener demasiados puede degradar el rendimiento general.</li>
+<li><strong>Índices en columnas de filtro y ordenación:</strong> Prioriza la creación de índices en columnas que se utilizan frecuentemente en cláusulas WHERE, JOIN o como criterios de ordenación.</li>
+<li><strong>Monitorizar y ajustar:</strong> La eficacia de los índices debe ser monitorizada y ajustada regularmente, especialmente después de cambios significativos en los volúmenes de datos.</li>
+</ul>
+<p>En conclusión, los índices son una herramienta poderosa en la ingeniería de bases de datos SQL, capaces de optimizar significativamente el rendimiento de las consultas.</p>
+<p>Sin embargo, su implementación debe ser gestionada cuidadosamente para equilibrar las ventajas en velocidad de consulta con las desventajas en uso de espacio y rendimiento de escritura.</p>
+<p>Una estrategia bien pensada de indexación es fundamental para el éxito en la gestión de las bases de datos.</p>
+<h2>Cómo he usado la indexación recientemente</h2>
+<p>En uno de los proyectos en los que trabajo, tenía una tabla de 800 megas en base de datos. 800 megas no son mucho, pero esta tabla tenía que cruzarla con 5 tablas más. Es ahí cuando empiezan los problemas de rendimiento. La consulta no se ejecutaba.</p>
+<p>Lo que hice para solucionarlo fue crear índices en todas las columnas que estaban involucradas en los JOIN.</p>
+<p>Por ejemplo, si la tabla de 800 megas se unía a una de las otras tablas mediante las columnas <code>id_tabla</code> y <code>id_tabla_2</code>, entonces serán estas dos columnas las que indexaré.</p>
+<p>Gracias a la indexación, la consulta pasó de no ejecutarse a ejecutarse instantáneamente.</p>
+<h2>Enlaces de interés</h2>
+<p>Si quieres ampliar algo de información, te dejo unos enlaces:</p>
+<ul>
+<li><a href="https://chartio.com/learn/databases/how-does-indexing-work/">¿How does indexing work?</a></li>
+<li><a href="https://www.tutorialspoint.com/sql/sql-indexes.htm">SQL indexes - Tutorialspoint</a></li>
+<li><a href="https://www.w3schools.com/sql/sql_create_index.asp">SQL Create index - W3Schools</a></li>
+</ul>
+
+<br/>
+
+<footer>
+    &copy; <span id="anyo"></span> Emilio Barragán Rodríguez. Todos los derechos reservados.
+    <script>
+        document.getElementById("anyo").innerHTML = new Date().getFullYear();
+    </script>
+</footer>
+</body>
+</html>
